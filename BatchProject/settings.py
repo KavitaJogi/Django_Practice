@@ -147,7 +147,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = '04julypython@gmail.com'
-EMAIL_HOST_PASSWORD = 'mjyw njde bgoh lvxu'
 
 
 #django allauth
@@ -163,8 +162,8 @@ SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': ['profile', 'email'],
         'APP': {
-            'client_id': '175636461438-a4tj9qe21puen8ii47ppumb7kt94fr9d.apps.googleusercontent.com',
-            'secret': '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',
+            'client_id': '',
+            'secret': '',
             'key': ''
         }
     }
