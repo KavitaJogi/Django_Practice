@@ -1,0 +1,20 @@
+BNK Mang.Sys
+
+1. A/c opening
+	-A/c number ----random
+	-A/c Holder Name
+	--A/c type
+2.Deposite
+	--min 2000/-
+mainbal>2000
+
+3.withdrwal
+	----min bal 1000/-
+main balance krta vdhre na hovu joi
+depo>=with
+self.bal-self-with
+4.Statement
+	--A/c number-Random
+	--A/c Holder Name
+	--A/c Type
+	--Balance
