@@ -38,7 +38,9 @@ def userlogut(request):
 
 def usersignup(request):
     msg=""
+    
     if request.method=='POST':
+        global newReq
         newReq=signform(request.POST)
         email=""
         if newReq.is_valid():
@@ -56,6 +58,7 @@ def usersignup(request):
                 from_ID=settings.EMAIL_HOST_USER
                 to_ID=[request.POST['email']]
                 send_mail(subject=sub,message=msg,from_email=from_ID,recipient_list=to_ID)
+
                         
                 #send_mail(subject="Your One Time Password",message=f"Hello User!\n\nThanks for registration with us!\n\nYour one time password is {otp}.\n\nThanks & Regards!\nNotesApp Tech - Rajkot\n+91 97247 99469 | sanket@tops-int.com",from_email=settings.EMAIL_HOST_USER,recipient_list=['kishantoliya4@gmail.com','meetladva1684@gmail.com','kevalkotadiya509@gmail.com','pratixagoswami2000@gmail.com','k.p.jogi89@gmail.com','radhikapithadia123@gmail.com'])
                 return redirect('otpverify')
@@ -118,9 +121,12 @@ def profile(request):
 
 def otpverify(request):
     msg=""
+    global otp
+    global newReq
     if request.method=='POST':
         if request.POST['otp']==str(otp):
             print("Verification done!")
+            newReq.save()
             return redirect('userlogin')
         else:
             print("Error!Invalid OTP")
